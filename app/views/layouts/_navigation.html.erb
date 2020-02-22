@@ -6,7 +6,7 @@
     </a>
     <div class="right menu">
       <div class="ui dropdown item">
-        Members <i class="dropdown icon"></i>
+        Members Accounts <i class="dropdown icon"></i>
         <div class="menu">
         <% if logged_in? %>
           <%= link_to "Your Profile", user_path(current_user), class: "item" %>
@@ -17,9 +17,22 @@
         <% end %>
         </div>
       </div>
+    </div>
+    <% if logged_in? %>
+      <div class="ui dropdown item">
+        Members Actions <i class="dropdown icon"></i>
+        <div class="menu">
+
+          <%= link_to "chatroom", chatroom_path, class: "item" %>
+          <%= link_to "Members list", users_path, class: "item" %>
+      
+        </div>
+      </div>
+    <% else %>
       <div class="item">
           <%= link_to "Sign Up", signup_path, class: "ui purple button" %>
       </div>
+    <% end %>
     </div>
   </div>
 </div>

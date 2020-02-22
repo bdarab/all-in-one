@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     post 'login', to: 'sessions#create'
     get 'logout', to: 'sessions#destroy'
 
-
+    get 'chatroom', to: 'chatroom#index'
+    post 'message', to: 'messages#create'
+    
     resources :users
 end
