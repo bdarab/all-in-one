@@ -1,0 +1,42 @@
+<h3 align="center">Signup</h3>
+<div class="ui attached message center">
+  <div class="header">
+    Welcome to our site!
+  </div>
+  <p>Fill out the form below to sign-up for a new account</p>
+</div>
+  <%= form_for(:user, :html => {class: "ui form attached fluid segment", role: "form"}, url: signup_path) do |f| %>
+  <div class="field">
+    <%= f.label :username %>
+    <div class= "ui icon input">
+      <%= f.text_field :username, placeholder: "Minimum 3 characters" %>
+      <i class= "user icon"></i>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <div class= "ui icon input">
+      <%= f.email_field :email, placeholder: "Email" %>
+      <i class= "user icon"></i>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :password, "Password" %>
+    <div class= "ui icon input">
+      <%= f.password_field :password, placeholder: "Minimum 6 characters" %>
+      <i class= "lock icon"></i>
+    </div>
+  <div class="field">
+    <%= f.label :password, "Password" %>
+    <div class= "ui icon input">
+      <%= f.password_field :password, placeholder: "Password" %>
+      <i class= "lock icon"></i>
+    </div>
+  </div>
+  <%= f.button "Login", class: "ui purple submit button" %>
+<% end %>
+
+<div class="ui bottom attached warning message">
+  <i class="icon help"></i>
+  Already signed up? <%= link_to "Log in", login_path %> instead.
+</div>

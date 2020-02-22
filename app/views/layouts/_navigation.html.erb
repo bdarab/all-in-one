@@ -1,0 +1,25 @@
+<div class="ui inverted small black menu">
+  <div class="ui container">
+    <%= link_to "Home", root_path, class: "item" %>
+    <a class="item">
+      Messages
+    </a>
+    <div class="right menu">
+      <div class="ui dropdown item">
+        Members <i class="dropdown icon"></i>
+        <div class="menu">
+        <% if logged_in? %>
+          <%= link_to "Your Profile", user_path(current_user), class: "item" %>
+          <%= link_to "Edit Your Profile", edit_user_path(current_user), class: "item" %>
+          <%= link_to "Log out", logout_path, class: "item" %>
+        <% else %>
+          <%= link_to "Log in", login_path, class: "item" %>
+        <% end %>
+        </div>
+      </div>
+      <div class="item">
+          <%= link_to "Sign Up", signup_path, class: "ui purple button" %>
+      </div>
+    </div>
+  </div>
+</div>

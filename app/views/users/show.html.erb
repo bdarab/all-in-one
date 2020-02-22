@@ -1,0 +1,19 @@
+<h3 align="center">User profile</h3>
+<% provide(:title, @user.username) %>
+
+<div class="row">
+  <aside class="col 4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %><br>
+        <%= @user.username %><br>
+        <%= @user.email %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col 4">
+    <% if current_user.admin? %>
+      <b><em><h3><%= "[admin]" %></h3></em></b>
+    <% end %>
+  </div>
+</div>

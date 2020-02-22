@@ -1,0 +1,30 @@
+<h3 align="center">Log in</h3>
+<div class="ui attached message center">
+  <div class="header">
+    Welcome Back!
+  </div>
+</div>
+
+  <%= form_for(:session, :html => {class: "ui form attached fluid segment", role: "form"}, url: login_path) do |f| %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <div class= "ui icon input">
+      <%= f.email_field :email, placeholder: "Email" %>
+      <i class= "user icon"></i>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :password, "Password" %>
+    <div class= "ui icon input">
+      <%= f.password_field :password, placeholder: "Minimum 6 characters" %>
+      <i class= "lock icon"></i>
+    </div>
+
+  <%= f.button "Login", class: "ui purple submit button" %>
+<% end %>
+
+<div class="ui bottom attached warning message">
+  <i class="icon help"></i>
+  Not a member yet? Please,  <%= link_to "Log in", login_path %>.
+</div>
