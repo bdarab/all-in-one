@@ -4,6 +4,16 @@
   background-image: asset-url('jumbo.jpg');
   background-size: cover;
   height: 550px;
+  color: #fff;
+  text-shadow: 2px solid #000;
+  padding-top: 10%;
+    ul{      
+      list-style: none;
+    }
+}
+
+#grid{
+  padding: 25px;
 }
 
 #grey{
