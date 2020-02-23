@@ -35,6 +35,7 @@ submit_message = function(){
 $(document).on('turbolinks:load', function(){
   $('.ui.dropdown').dropdown();
   $('.message').fadeOut(5000);
+  
   submit_message();
   scroll_bottom();
 })

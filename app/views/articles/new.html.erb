@@ -1,0 +1,14 @@
+<h3 align="center">New Article</h3>
+<%= form_for(@article, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+<div class="ui form">
+  <div class="field">
+    <%= f.label :title, "Title: ", class: "col 2 " %>
+    <%= f.text_field :title, placeholder: "Enter a title ... ", class: "form" %>
+  </div>
+    <div class="field">
+    <%= f.label :content, "Content: ", class: "col 2" %>
+    <%= f.text_field :content, placeholder: "Enter your content ... ", class: "form" %>
+  </div>
+  <%= f.submit "Submit", class: "ui submit purple button" %>
+</div>
+<% end %>

@@ -16,7 +16,7 @@
           <div class="field">
             <div class="ui fluid icon input">
               <%= f.text_field :body, placeholder: "Write a message and send it using ENTER or clicking the button" %>
-              <%= f.button '<i class="bordered inverted purple edit icon"></i>'.html_safe %>
+              <%= f.button '<i class="bordered inverted purple edit icon"></i>'.html_safe, onclick: "location.reload()" %>
             </div>
           </div>
         <% end %>
@@ -32,9 +32,6 @@
             <b>Online members</b>
           </h4>
           <ul>
-            <% User.online.each do |user| %>
-              <li><%= user.username %></li>
-            <% end %>
           </ul>
         </div>
       </div>
