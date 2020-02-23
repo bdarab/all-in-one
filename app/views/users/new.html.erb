@@ -5,7 +5,7 @@
   </div>
   <p>Fill out the form below to sign-up for a new account</p>
 </div>
-  <%= form_for(:user, :html => {class: "ui form attached fluid segment", role: "form"}, url: signup_path) do |f| %>
+<%= form_for(:user, :html => {class: "ui form attached fluid segment", role: "form"}, url: signup_path) do |f| %>
   <div class="field">
     <%= f.label :username %>
     <div class= "ui icon input">
@@ -35,6 +35,7 @@
   </div>
   <%= f.button "Signup", class: "ui purple submit button" %>
 <% end %>
+
 
 <div class="ui bottom attached warning message">
   <i class="icon help"></i>

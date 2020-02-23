@@ -6,7 +6,7 @@
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
-      <div class="content">
+      <div class="content" id="messages">
         <div class="ui feed" id="message-container">
             <%= render @messages %>
         </div>
@@ -15,7 +15,7 @@
         <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
           <div class="field">
             <div class="ui fluid icon input">
-              <%= f.text_field :body %>
+              <%= f.text_field :body, placeholder: "Write a message and send it using ENTER or clicking the button" %>
               <%= f.button '<i class="bordered inverted purple edit icon"></i>'.html_safe %>
             </div>
           </div>
@@ -28,15 +28,14 @@
     <div class="ui fluid raised card chatbox" id="chatbox" >
       <div class="content">
         <div class="ui inverted purple vertical menu">
-          <a class="item">
-            Home
-          </a>
-          <a class="item">
-            Messages
-          </a>
-          <a class="item">
-            Friends
-          </a>
+          <h4 class="item">
+            <b>Online members</b>
+          </h4>
+          <ul>
+            <% User.online.each do |user| %>
+              <li><%= user.username %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
