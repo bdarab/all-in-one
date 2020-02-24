@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# All-In-One
 
-Things you may want to cover:
+This is my first project from scratch that is almost finalized
 
-* Ruby version
+It containes:
 
-* System dependencies
+**Ruby on Rails framework
 
-* Configuration
+**A blog with articles
 
-* Database creation
+**A chatroom with ActionCable
 
-* Database initialization
+# grid & Styling:
 
-* How to run the test suite
+I have used Semantic-ui sass for grids and styling. I found it easier and more styling possibilities than a basic bootstrap. Ofcourse, it is not done. I will be working on it on daily basis.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+# User Authentication and Authorization:
 
-* ...
+I had alot of difficulties with "Devise", I found it difficult to customize routes and styles. So, I did it from scratch myself. Ofcourse, this problem with "Devise", is probably because of my lack of knowledge.
+
+# Forms & Their Functionality:
+
+This was done through the usage of Rails functionality and Semantic designs. Even though there's a lot of styling left to be done, but, basic design and functionalities are solid.
