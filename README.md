@@ -6,9 +6,11 @@ This is my first project from scratch that is almost finalized
 
 It containes:
 
-Ruby on Rails framework
-A blog with articles
-A chatroom with ActionCable
+**Ruby on Rails framework
+
+**A blog with articles
+
+**A chatroom with ActionCable
 
 # grid & Styling:
 
