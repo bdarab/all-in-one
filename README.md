@@ -14,7 +14,7 @@ It containes:
 
 # grid & Styling:
 
-I have used Semantic-ui sass for grids and styling. I found it easier and more styling possibilities than a basic bootstrap.
+I have used Semantic-ui sass for grids and styling. I found it easier and more styling possibilities than a basic bootstrap. Ofcourse, it is not done. I will be working on it on daily basis.
 
 
 # User Authentication and Authorization:
