@@ -1,4 +1,10 @@
 @import "semantic-ui";
+ 
+body{
+  background-color: #eaeaea;
+  margin: 60px;
+}
+
 
 .jumbotron{
   background-image: asset-url('jumbo.jpg');
@@ -6,6 +12,7 @@
   height: 550px;
   color: #fff;
   text-shadow: 2px solid #000;
+  
   padding-top: 10%;
     ul{      
       list-style: none;
@@ -75,4 +82,10 @@ aside {
 #messages{
   height: 15em;
   overflow: auto;
+}
+
+// Article
+
+#article_content{
+  height: 400px;
 }

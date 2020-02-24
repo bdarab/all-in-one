@@ -1,7 +1,9 @@
 class User < ApplicationRecord
-
+  
+  has_many :articles
   has_many :chatroom
   has_many :messages
+
 
   validates :username, presence: true, length: {minimum: 3, maximum: 30},
             uniqueness: {casesensetive: false}
