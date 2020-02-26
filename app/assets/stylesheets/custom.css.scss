@@ -23,8 +23,8 @@ body{
   padding: 25px;
 }
 
-#grey{
-  border: 1px solid #eaeaea;
+.ui.grid {
+  margin: 0;
 }
 
 /* sidebar */
@@ -54,6 +54,8 @@ aside {
     }
   }
 }
+
+// gravatar
 
 .gravatar {
   float: left;

@@ -1,8 +1,30 @@
-<h3 align="center">
-<div id="shage">
-  <%= image_tag(@article.image) if @article.image.attached? %><br><br>
+<% provide(:title, @article.title) %>
+
+<div class="ui very relaxed items">
+  <div class="item">
+    <div id="shage">
+      <%= image_tag(@article.image) if @article.image.attached? %><br><br>
+    </div>
+  </div>
+  <div class="item">
+    <h3>
+      <%= @article.title %><br>
+    </h3>
+  </div>
+  <div class="item">
+    <p>
+      <%= @article.content %><br>
+    </p>
+  </div>
+
+  <div class="item">
+    <% if logged_in? and current_user== @user or current_user.admin? %>
+      <div class="ui buttons">
+        <button class="ui negative button"><%= link_to "Delete article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %></button>
+        <div class="or"></div>
+        <button class="ui positive button"><%= link_to "Edit article", edit_article_path(@article) %></button>
+      </div>
+    <% end %>
+
+  </div>
 </div>
-
-<%= @article.title %></h3>
-
-<%= @article.content %>

@@ -1,27 +1,37 @@
 <h3 align="center">User profile</h3>
 <% provide(:title, @user.username) %>
 
-<div class="ui celled grid">
-  <div class="row form">
-    <div class="three wide column">
+<div class="ui very relaxed items">
+  <div class="item">
+    <div class="image">
       <%= gravatar_for @user %>
     </div>
-    <div class="three wide column">
-      <h3>
-        <%= @user.username %><br>
-        <%= @user.email %>
-        <% if current_user.admin? %>
-          <b><em><h3><%= "[admin]" %></h3></em></b>
-        <% end %>
-      </h3>
-    </div>
-    <div class="nine wide column">
-      <h3 align="center"><%= "#{@user.username}" %>'s articles</h3>
-      <ul>
-        <% @user.articles.each do |article| %>
-          <li><h4><%= link_to article.title, article %></h4></li>  
-        <% end %>
-      </ul>
-    </div>
+  </div>
+  <div class="item">
+    <h3>
+      <%= @user.username %><br>
+      <%= @user.email %>
+      <% if current_user.admin? %>
+        <b><em><h3><%= "[admin]" %></h3></em></b>
+      <% end %>
+    </h3>
+  </div>
+  <div class="item">
+    <h3><%= "#{@user.username}" %>'s articles</h3>
+    <ul>
+      <% @user.articles.each do |article| %>
+        <li><h4><%= link_to article.title, article %></h4></li>  
+      <% end %>
+    </ul>
+  </div>
+  <div class="item">
+    <% if logged_in? and current_user== @user or current_user.admin? %>
+      <div class="ui buttons">
+        <button class="ui negative button"><%= link_to "Delete user", user_path(@user), method: :delete, data: {confirm: "Are you sure?"} %></button>
+        <div class="or"></div>
+        <button class="ui positive button"><%= link_to "Edit profile", edit_user_path(@user) %></button>
+      </div>
+    <% end %>
+
   </div>
 </div>
