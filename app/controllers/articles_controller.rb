@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.includes(:user)
+    @articles = Article.includes(:user).page(params[:page]).per_page(5)
   end
 
   def new
@@ -48,7 +48,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :user_id)
+    params.require(:article).permit(:title, :content, :user_id, :image)
   end
 
   def set_article

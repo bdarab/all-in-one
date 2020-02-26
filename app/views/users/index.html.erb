@@ -1,6 +1,6 @@
 <h3 align="center">Users Index</h3>
 
-
+<%= will_paginate @posts %>
 <% @users.each do |user| %>
 
   <div class="row">
@@ -17,3 +17,5 @@
   <hr id="grey">
 
 <% end %>
+
+<%= will_paginate @posts %>

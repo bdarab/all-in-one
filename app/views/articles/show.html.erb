@@ -1,3 +1,8 @@
-<h3 align="center"><%= @article.title %></h3>
+<h3 align="center">
+<div id="shage">
+  <%= image_tag(@article.image) if @article.image.attached? %><br><br>
+</div>
+
+<%= @article.title %></h3>
 
 <%= @article.content %>

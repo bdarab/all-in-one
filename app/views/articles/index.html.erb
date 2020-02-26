@@ -1,5 +1,21 @@
+<%= will_paginate @posts %>
 <% @articles.each do |article| %>
-  <h3><%= article.title %></h3>
-
-  <%= article.content %>
+<div class="ui very relaxed items">
+  <div class="item">
+    <div class="image">
+      <%= image_tag(article.image) if article.image.attached? %>
+    </div>
+    <div class="content">
+      <h3 class="ui header"><%= link_to (article.title), article_path(article)  %></h3></a>
+      <div>
+        <small><b>by: <%= article.user.username %> at: <%= article.created_at %></b></small>
+      </div>
+      <div class="description">
+        <p><%= article.content %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
 <% end %>
+<%= will_paginate @posts, class: "digg_pagination" %>

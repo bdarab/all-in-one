@@ -7,8 +7,13 @@
   </div>
     <div class="field">
     <%= f.label :content, "Content: ", class: "col 2" %>
-    <%= f.text_field :content, placeholder: "Enter your content ... ", class: "form" %>
+    <%= f.text_area :content, placeholder: "Enter your content ... ", class: "form" %>
   </div>
   <%= f.submit "Submit", class: "ui submit purple button" %>
+
+  </div>
+    <div class="field">
+    <%= f.file_field :image %>
+  </div>
 </div>
 <% end %>
